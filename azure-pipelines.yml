@@ -30,7 +30,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              backendServiceArm: 'TfConnection'
+              backendServiceArm: 'terraform-sp-test'
               backendAzureRmResourceGroupName: '$(resourcegroup)'
               backendAzureRmStorageAccountName: '$(accountname)'
               backendAzureRmContainerName: '$(containername)'
@@ -55,7 +55,7 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'init'
-              backendServiceArm: 'TfConnection'
+              backendServiceArm: 'terraform-sp-test'
               backendAzureRmResourceGroupName: '$(resourcegroup)'
               backendAzureRmStorageAccountName: '$(accountname)'
               backendAzureRmContainerName: '$(containername)'
@@ -65,10 +65,10 @@ stages:
             inputs:
               provider: 'azurerm'
               command: 'plan'
-              environmentServiceNameAzureRM: 'TfConnection'
+              environmentServiceNameAzureRM: 'terraform-sp-test'
           - task: TerraformTaskV4@4
             displayName: apply
             inputs:
               provider: 'azurerm'
               command: 'apply'
-              environmentServiceNameAzureRM: 'TfConnection'
+              environmentServiceNameAzureRM: 'terraform-sp-test'
